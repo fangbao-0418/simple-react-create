@@ -44,7 +44,6 @@ function getStylusLoaderConfig (dev, modules) {
 function getStyleLoaderConfig (dev = true) {
   return [{
     test: /\.css$/,
-    include: path.resolve(__cwd, 'src'),
     exclude: /\.m(odule)?\.css$/,
     use: [
       MiniCssExtractPlugin.loader,
@@ -103,7 +102,7 @@ function getFileLoaderConfig (dev = true) {
 function ExtractTextPlugin (dev = true) {
   return new MiniCssExtractPlugin({
     filename: dev ? '' : 'css/' + '[name].[contenthash:8].css',
-    // chunkFilename: dev ? '' : 'css/' + '[id].css'
+    chunkFilename: dev ? '' : 'css/' + '[id].css',
     allChunks: true
   })
 }

@@ -29,7 +29,10 @@ module.exports = (config = {}, dev = true) => {
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
-    ExtractTextPlugin(dev)
+    ExtractTextPlugin(dev),
+    new webpack.ProvidePlugin({
+      APP: path.resolve(__cwd, 'src/utils/app')
+    })
   ]
   return {
     mode: dev ? 'development' : 'production',

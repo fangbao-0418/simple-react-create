@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import styles from './style/style.module'
+import DashBoard from '@/containers/DashBoard'
+const url = require('@/assets/nezha.jpg')
 function Main () {
   return (
     <div
@@ -8,9 +10,9 @@ function Main () {
       style={{color: 'red'}}
     >
       <div style={{width: '200px'}}>
-      <img src={require('./assets/nezha.jpg')} width={200} />
-      <div style={{textAlign: 'center'}}><span>我命由我不由天</span></div>
-      </div>
+      <img src={url} width={200} />
+      <div style={{textAlign: 'center'}}><span>我命由我不由天</span></div></div>
+      <DashBoard />
     </div>
   )
 }
