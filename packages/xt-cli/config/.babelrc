@@ -2,7 +2,7 @@
   "presets": [
     [
       "@babel/preset-env", {
-        "useBuiltIns": "usage",
+        // "useBuiltIns": "usage",
         "targets": {
           "browsers": ["> 5%", "last 2 versions"]
         },
@@ -13,10 +13,21 @@
   ],
   "plugins": [
     "@babel/plugin-transform-runtime",
-    ["import", {
-      "libraryName": "antd",
-      "libraryDirectory": "es",
-      "style": "css" // `style: true` 会加载 less 文件
-    }]
+    [
+      "import", {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css" // `style: true` 会加载 less 文件
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "lodash",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false,  // default: true
+      },
+      "loadsh"
+    ]
   ]
 }

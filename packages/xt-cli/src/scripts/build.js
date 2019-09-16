@@ -10,7 +10,7 @@ program
   .option('-d, --out-dir <out>', 'specified out dir of app')
 program.parse(process.argv)
 const entry = program.entry || ''
-const outdir = program['out-dir'] || ''
+const outdir = program.outDir || ''
 var webpackConfig = require('../../config/webpack/prod.config')({
   outdir,
   entry
