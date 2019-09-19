@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 module.exports = (config) => {
   var baseConfig = require('./base.config')(config, false)
   var __cwd = process.cwd()
@@ -22,6 +23,11 @@ module.exports = (config) => {
         }
       ]
     }
+  )
+  baseConfig.plugins.push(
+    new webpack.DefinePlugin({
+      __ENV__: JSON.stringify('prod')
+    })
   )
   return baseConfig
 }

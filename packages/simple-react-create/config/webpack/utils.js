@@ -103,7 +103,8 @@ function ExtractTextPlugin (dev = true) {
   return new MiniCssExtractPlugin({
     filename: dev ? '' : 'css/' + '[name].[contenthash:8].css',
     chunkFilename: dev ? '' : 'css/' + '[id].css',
-    allChunks: true
+    allChunks: true,
+    ignoreOrder: true
   })
 }
 module.exports = {
