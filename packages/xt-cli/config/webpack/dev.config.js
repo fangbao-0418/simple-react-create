@@ -1,11 +1,13 @@
+const fs = require('fs')
 var path = require('path')
 var webpack = require('webpack')
+var paths = require('../paths')
+const customWebpackConfig = fs.existsSync(paths.webpack) ? require(paths.webpack) : null
 module.exports = (config) => {
   var baseConfig = require('./base.config')(config, true)
   var __cwd = process.cwd()
-  console.log(__cwd + '/', 'xxxxx')
-  const tsconfigFileContent = require(path.resolve(__dirname, '../tsconfig.json'))
-  tsconfigFileContent.compilerOptions.baseUrl = __cwd
+  // const tsconfigFileContent = require(path.resolve(__dirname, '../tsconfig.json'))
+  // tsconfigFileContent.compilerOptions.baseUrl = __cwd
   baseConfig.module.rules.push(
     {
       test: /\.tsx?$/,
@@ -18,9 +20,9 @@ module.exports = (config) => {
             // configFileName: path.resolve(__dirname, '../tsconfig.json'),
             useCache: true,
             useBabel: true,
-            babelOptions: {
-              configFile: path.resolve(__dirname, '../.babelrc')
-            },
+            // babelOptions: {
+            //   configFile: path.resolve(__dirname, '../.babelrc')
+            // },
             babelCore: '@babel/core'
           }
         }
@@ -32,5 +34,11 @@ module.exports = (config) => {
       __ENV__: JSON.stringify('dev')
     })
   )
+  if (customWebpackConfig) {
+    const finalConfig = customWebpackConfig(baseConfig, 'dev')
+    if (finalConfig) {
+      baseConfig = finalConfig
+    }
+  }
   return baseConfig
 }

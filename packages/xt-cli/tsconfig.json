@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "compileOnSave": true,
     "baseUrl": ".",
     "noImplicitAny": true,
     "target": "es5",

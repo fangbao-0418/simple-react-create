@@ -18,6 +18,10 @@ var webpackConfig = require('../../config/webpack/prod.config')({
 
 var __cwd = process.cwd();
 function callback (err, stats) {
+  if (err && !stats) {
+    console.error(chalk.red(err))
+    return
+  }
   process.stdout.write(stats.toJson({
     cached: true,
     colors: true,

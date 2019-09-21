@@ -22,10 +22,10 @@ module.exports = (config = {}, dev = true) => {
     new webpack.LoaderOptionsPlugin({
       test: /\.jsx?$/,
       options: {
-        eslint: {
-          configFile: path.resolve(__dirname, '../.eslintrc.json'),
-          cache: false
-        }
+        // eslint: {
+        //   configFile: path.resolve(__dirname, '../.eslintrc.json'),
+        //   cache: false
+        // }
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
@@ -61,9 +61,9 @@ module.exports = (config = {}, dev = true) => {
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
-            options: {
-              configFile: path.resolve(__dirname, '../.babelrc')
-            }
+            // options: {
+            //   configFile: path.resolve(__dirname, '../.babelrc')
+            // }
           }
         },
         {
@@ -73,10 +73,10 @@ module.exports = (config = {}, dev = true) => {
           use: [
             {
               loader: 'tslint-loader',
-              options: {
-                configFile: path.resolve(__dirname, '../tslint.json'),
-                tsConfigFile: path.resolve(__dirname, '../tsconfig.json')
-              }
+              // options: {
+              //   configFile: path.resolve(__dirname, '../tslint.json'),
+              //   tsConfigFile: path.resolve(__dirname, '../tsconfig.json')
+              // }
             }
           ]
         },
