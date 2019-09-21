@@ -41,12 +41,21 @@ function getStylusLoaderConfig (dev, modules) {
   }
 }
 
+function getMiniCssExtractLoaderConfig (dev) {
+  return {
+    loader: MiniCssExtractPlugin.loader,
+    options: {
+      hmr: dev
+    }
+  }
+}
+
 function getStyleLoaderConfig (dev = true) {
   return [{
     test: /\.css$/,
     exclude: /\.m(odule)?\.css$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      getMiniCssExtractLoaderConfig(dev),
       getCssLoaderConfig(dev),
       getPostCssLoaderConfig(dev)
     ]
@@ -54,7 +63,7 @@ function getStyleLoaderConfig (dev = true) {
     test: /\.m(oudle)?.css$/,
     include: path.resolve(__cwd, 'src'),
     use: [
-      MiniCssExtractPlugin.loader,
+      getMiniCssExtractLoaderConfig(dev),
       getCssLoaderConfig(dev, true),
       getPostCssLoaderConfig(dev, true)
     ]
@@ -63,7 +72,7 @@ function getStyleLoaderConfig (dev = true) {
     include: path.resolve(__cwd, 'src'),
     exclude: /\.m(odule)?\.styl$/,
     use: [
-      MiniCssExtractPlugin.loader,
+      getMiniCssExtractLoaderConfig(dev),
       getCssLoaderConfig(dev),
       getPostCssLoaderConfig(dev),
       getStylusLoaderConfig(dev)
@@ -72,7 +81,7 @@ function getStyleLoaderConfig (dev = true) {
     test: /\.m(odule)?.styl$/,
     include: path.resolve(__cwd, 'src'),
     use: [
-      MiniCssExtractPlugin.loader,
+      getMiniCssExtractLoaderConfig(dev),
       getCssLoaderConfig(dev, true),
       getPostCssLoaderConfig(dev, true),
       getStylusLoaderConfig(dev, true)
@@ -101,8 +110,8 @@ function getFileLoaderConfig (dev = true) {
 }
 function ExtractTextPlugin (dev = true) {
   return new MiniCssExtractPlugin({
-    filename: dev ? '' : 'css/' + '[name].[contenthash:8].css',
-    chunkFilename: dev ? '' : 'css/' + '[id].css',
+    filename: dev ? '[name].css' : 'css/' + '[name].[contenthash:8].css',
+    chunkFilename: dev ? '[id].css' : 'css/' + '[id].css',
     allChunks: true,
     ignoreOrder: true
   })

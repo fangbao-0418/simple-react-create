@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import styles from './style/style.module'
+import styles from './style/style.module.styl'
 import DashBoard from '@/containers/DashBoard'
 const url = require('@/assets/nezha.jpg')
 function Main () {
