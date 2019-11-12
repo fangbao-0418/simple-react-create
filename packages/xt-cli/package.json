@@ -1,6 +1,6 @@
 {
   "name": "xt-react-cli",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,7 @@
     "xtreact-build": "./bin/build.js"
   },
   "scripts": {
-    "lib": "npx babel src/scripts  -d ./lib/scripts",
+    "lib": "npx babel src/scripts  -d ./lib/scripts --no-babelrc",
     "dev": "node ./src/scripts/start.js",
     "build": "node ./src/scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
