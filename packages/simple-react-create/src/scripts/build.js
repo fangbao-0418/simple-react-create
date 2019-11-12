@@ -41,11 +41,11 @@ function callback (err, stats) {
       chunks: false, // 使构建过程更静默无输出
       colors: true // 在控制台展示颜色
     }))
-    console.log(chalk.green('[ok] Builded with successful'))
+    console.log(chalk.green('[ok] Builded with successful'));
   }
 }
 rm(path.resolve(__cwd, 'deploy/dist/*'), function (err) {
   if (err) throw err
-  var compiler = webpack(webpackConfig)
-  compiler.run(callback)
+  var compiler = webpack(webpackConfig);
+  compiler.run(callback);
 })

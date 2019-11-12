@@ -17,7 +17,7 @@ module.exports = (config = {}, dev = true) => {
       template: path.resolve(__cwd, 'src/index.html'),
       // 要把<script>标签插入到页面哪个标签里(body|true|head|false)
       inject: true,
-      favicon: null
+      favicon: path.resolve(__cwd, 'src/favicon.ico')
     }),
     new webpack.LoaderOptionsPlugin({
       test: /\.jsx?$/,
