@@ -10,7 +10,7 @@
         "modules": false 
       }
     ],
-    "@babel/preset-react",
+    "@babel/preset-react"
   ],
   "plugins": [
     "@babel/plugin-transform-runtime",
@@ -26,7 +26,7 @@
       {
         "libraryName": "lodash",
         "libraryDirectory": "",
-        "camel2DashComponentName": false,  // default: true
+        "camel2DashComponentName": false  // default: true
       },
       "loadsh"
     ]

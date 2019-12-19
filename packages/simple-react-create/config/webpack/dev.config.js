@@ -12,6 +12,7 @@ module.exports = (config) => {
     {
       test: /\.tsx?$/,
       include: path.resolve(__cwd, 'src'),
+      exclude: /node_modules/,
       use: [
         {
           loader: 'awesome-typescript-loader',
@@ -20,9 +21,9 @@ module.exports = (config) => {
             // configFileName: path.resolve(__dirname, '../tsconfig.json'),
             useCache: true,
             useBabel: true,
-            // babelOptions: {
-            //   configFile: path.resolve(__dirname, '../.babelrc')
-            // },
+            babelOptions: {
+              configFile: path.resolve(__cwd, './.babelrc')
+            },
             babelCore: '@babel/core'
           }
         }
