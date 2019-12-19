@@ -11,19 +11,20 @@ module.exports = (config) => {
     {
       test: /\.tsx?$/,
       include: path.resolve(__cwd, 'src'),
+      exclude: /node_modules/,
       use: [
         {
           loader: 'babel-loader',
-          // options: {
-          //   configFile: path.resolve(__dirname, '../.babelrc')
-          // }
+          options: {
+            configFile: path.resolve(__cwd, './.babelrc')
+          }
         },
         {
           loader: 'ts-loader',
-          // options: {
-          //   context: __cwd,
-          //   configFile: path.resolve(__dirname, '../tsconfig.json')
-          // }
+          options: {
+            context: __cwd,
+            configFile: path.resolve(__cwd, './tsconfig.json')
+          }
         }
       ]
     }
