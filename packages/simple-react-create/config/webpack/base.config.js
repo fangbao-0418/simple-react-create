@@ -32,7 +32,7 @@ module.exports = (config = {}, dev = true) => {
     },
     output: {
       path: path.resolve(__cwd, outdir),
-      filename: dev ? undefined : 'js/' + '[name].bundle.js',
+      filename: dev ? undefined : 'js/' + '[name]-[hash].bundle.js',
       publicPath: '/'
     },
     module: {
