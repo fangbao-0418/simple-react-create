@@ -3,3 +3,4 @@ yarn-error.log
 lib
 .awcache
 dist
+.vscode

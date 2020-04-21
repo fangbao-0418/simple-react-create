@@ -1,3 +1,9 @@
+/*
+ * @Date: 2019-11-18 14:02:56
+ * @LastEditors: fangbao
+ * @LastEditTime: 2020-04-21 17:27:43
+ * @FilePath: /xt-wms/Users/fangbao/Documents/xituan/xt-cli/src/scripts/start.js
+ */
 // 'use strict'
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
@@ -11,7 +17,7 @@ const entry = program.entry || ''
 var webpackConfig = require('../../config/webpack/dev.config')({
   port,
   entry
-}); 
+})
 
 const options = {
   inline: true,
