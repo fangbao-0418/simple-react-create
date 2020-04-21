@@ -1,3 +1,9 @@
+/*
+ * @Date: 2019-11-18 14:02:56
+ * @LastEditors: fangbao
+ * @LastEditTime: 2020-04-21 17:28:13
+ * @FilePath: /xt-wms/Users/fangbao/Documents/xituan/xt-cli/config/webpack/dev.config.js
+ */
 const fs = require('fs')
 var path = require('path')
 var webpack = require('webpack')
@@ -29,11 +35,6 @@ module.exports = (config) => {
         }
       ]
     }
-  )
-  baseConfig.plugins.push(
-    new webpack.DefinePlugin({
-      __ENV__: JSON.stringify('dev')
-    })
   )
   if (customWebpackConfig) {
     const finalConfig = customWebpackConfig(baseConfig, 'dev')
