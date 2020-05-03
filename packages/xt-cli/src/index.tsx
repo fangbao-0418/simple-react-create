@@ -3,6 +3,16 @@ import { render } from 'react-dom'
 import styles from './style/style.module.styl'
 import DashBoard from '@/containers/DashBoard'
 const url = require('@/assets/nezha.jpg')
+
+/** es2020  test */
+const a: {
+  b?: {
+    c?: string
+  }
+} = {}
+
+console.log(a.b?.c)
+
 function Main () {
   return (
     <div

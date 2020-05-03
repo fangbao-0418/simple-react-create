@@ -110,8 +110,8 @@ function getFileLoaderConfig (dev = true) {
 }
 function ExtractTextPlugin (dev = true) {
   return new MiniCssExtractPlugin({
-    filename: dev ? '[name].css' : 'css/' + '[name].[contenthash:8].css',
-    chunkFilename: dev ? '[id].css' : 'css/' + '[id].css',
+    filename: dev ? '[name].css' : 'css/' + '[name].[hash:8].css',
+    chunkFilename: dev ? '[id].css' : 'css/' + '[id].[hash:8].css',
     allChunks: true,
     ignoreOrder: true
   })
