@@ -100,7 +100,7 @@ function getImageLoaderConfig (dev = true) {
 }
 function getFileLoaderConfig (dev = true) {
   return {
-    test: /\.(woff2?|eot|ttf|otf|svg|mp3|pdf|xlsx)(\?.*)?$/,
+    test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
     loader: 'url-loader',
     options: {
       limit: 10000,
