@@ -4,25 +4,16 @@ import styles from './style/style.module.styl'
 import DashBoard from '@/containers/DashBoard'
 const url = require('@/assets/nezha.jpg')
 
-/** es2020  test */
-const a: {
-  b?: {
-    c?: string
-  }
-} = {}
-
-console.log(a.b?.c)
-
 function Main () {
   return (
     <div
       className={styles.box}
-      style={{color: 'red'}}
+      style={{ color: 'red' }}
     >
-      <div style={{width: '200px'}}>
-      <img src={url} width={200} />
-      <div style={{textAlign: 'center'}}><span>我命由我不由天</span></div></div>
-      <DashBoard />
+      <div style={{ width: '200px' }} >
+        <img src={ url } width={ 200 } />
+        <div style={{ textAlign: 'center' }}><span>我命由我不由天</span></div>
+      </div>
     </div>
   )
 }

@@ -1,3 +1,9 @@
+/*
+ * @Date: 2019-11-18 14:02:56
+ * @LastEditors: fangbao
+ * @LastEditTime: 2020-05-12 10:53:10
+ * @FilePath: /xt-crm/Users/fangbao/Documents/xituan/xt-cli/config/webpack/base.config.js
+ */
 var webpack = require('webpack')
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -39,7 +45,7 @@ module.exports = (config = {}, dev = true) => {
       rules: [
         {
           enforce: 'pre',
-          test: /\.jsx?$/,
+          test: /\.(js|ts)x?$/,
           include: path.resolve(__cwd, 'src'),
           use: [
             'source-map-loader',
@@ -56,21 +62,6 @@ module.exports = (config = {}, dev = true) => {
               configFile: path.resolve(__cwd, './.babelrc')
             }
           }
-        },
-        {
-          enforce: 'pre',
-          test: /\.tsx?$/,
-          include: path.resolve(__cwd, 'src'),
-          use: [
-            {
-              loader: 'tslint-loader',
-              options: {
-                configFile: path.resolve(__cwd, './tslint.json'),
-                tsConfigFile: path.resolve(__cwd, './tsconfig.json'),
-                emitErrors: function (err) { throw Errow(err) }
-              }
-            }
-          ]
         },
         ...getStyleLoaderConfig(dev),
         getImageLoaderConfig(dev),
