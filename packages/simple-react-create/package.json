@@ -1,6 +1,6 @@
 {
   "name": "simple-react-create",
-  "version": "1.0.1",
+  "version": "0.0.1-alpha.0",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -72,6 +72,5 @@
     "lib",
     "config"
   ],
-  "devDependencies": {},
   "proxy": "http://localhost:4000"
 }
