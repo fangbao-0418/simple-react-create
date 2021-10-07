@@ -1,12 +1,12 @@
 {
-  "name": "xt-react-cli",
-  "version": "1.0.36",
+  "name": "simple-react-create",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "xtreact": "./bin/cli.js",
-    "xtreact-start": "./bin/start.js",
-    "xtreact-build": "./bin/build.js"
+    "simple-react-create": "./bin/cli.js",
+    "simple-react-create-start": "./bin/start.js",
+    "simple-react-create-build": "./bin/build.js"
   },
   "scripts": {
     "lib": "npx babel src/scripts  -d ./lib/scripts --no-babelrc",
@@ -72,5 +72,6 @@
     "lib",
     "config"
   ],
-  "devDependencies": {}
+  "devDependencies": {},
+  "proxy": "http://localhost:4000"
 }

@@ -1,9 +1,3 @@
-/*
- * @Date: 2019-11-18 14:02:56
- * @LastEditors: fangbao
- * @LastEditTime: 2020-05-12 10:53:10
- * @FilePath: /xt-crm/Users/fangbao/Documents/xituan/xt-cli/config/webpack/base.config.js
- */
 var webpack = require('webpack')
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -23,7 +17,7 @@ module.exports = (config = {}, dev = true) => {
       template: path.resolve(__cwd, 'src/index.html'),
       // 要把<script>标签插入到页面哪个标签里(body|true|head|false)
       inject: true,
-      favicon: path.resolve(__cwd, 'src/favicon.ico')
+      // favicon: path.resolve(__cwd, 'src/favicon.ico')
     }),
     new webpack.HotModuleReplacementPlugin(),
     ExtractTextPlugin(dev),
