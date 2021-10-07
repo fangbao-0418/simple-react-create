@@ -1,8 +1,9 @@
-// 'use strict'
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const program = require('commander')
 const detect = require('detect-port')
+const paths = require('../../config/paths')
+const packages = require(paths.package)
 
 program
   .option('-p, --port <number>', 'specified port of server')
@@ -23,13 +24,13 @@ const options = {
     colors: true,
     errors: true
   },
-  // proxy: {
-  //   '/api': {
-  //     target: 'https://host.cn',
-  //     changeOrigin: true,
-  //     secure: false
-  //   },
-  // },
+  proxy: packages.proxy ? {
+    '/api': {
+      target: packages.proxy,
+      changeOrigin: true,
+      secure: false
+    },
+  } : undefined,
   // 启用gzip压缩一切服务:
   compress: true,
   host: '0.0.0.0',

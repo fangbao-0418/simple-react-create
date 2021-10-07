@@ -8,6 +8,7 @@ function resolveApp (relativePath) {
 
 module.exports = {
   appPath: resolveApp('.'),
+  package: resolveApp('package.json'),
   appDist: resolveApp('dist'),
   webpack: resolveApp('webpack.config.js')
 };
