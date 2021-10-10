@@ -1,20 +1,19 @@
 {
-  "name": "react-demo",
+  "name": "simple-react-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./node_modules/easy-create-react/bin/start",
-    "build": "node ./src/scripts/build.js"
+    "dev": "npx simple-react-create start",
+    "build": "npx simple-react-create-build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "easy-create-react": "^0.0.2"
+    "simple-react-create": "^0.0.1-alpha.0"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^5.2.1",
     "eslint-plugin-simple-react": "^1.0.8"
   },
   "proxy": "http://localhost:3000"
