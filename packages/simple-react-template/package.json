@@ -1,6 +1,6 @@
 {
   "name": "simple-react-template",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "simple-react-create": "^0.0.1-alpha.0"
+    "simple-react-create": "^1.0.0-alpha.0"
   },
   "devDependencies": {
     "eslint-plugin-simple-react": "^1.0.8"
