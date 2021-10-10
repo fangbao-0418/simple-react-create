@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "globals": {
+    "APP": true,
+    "__ENV__": true,
+    "BUILD_TIME": true
+  },
+  "extends": ["plugin:simple-react/recommended"],
+  "rules": {
+    "brace-style": 0,
+    "react/no-string-refs": 0
+  },
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  }
+}
