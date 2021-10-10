@@ -1,13 +1,20 @@
 {
-  "name": "simple-react-template",
+  "name": "simple-react-cra-template",
   "version": "1.0.0-y.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx simple-react-create start",
+    "dev": "npx simple-react-create-start",
     "build": "npx simple-react-create-build"
   },
+  "files": [
+    "src",
+    ".babelrc",
+    ".eslintrc.json",
+    "tsconfig.json",
+    ".gitignore"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,5 +24,5 @@
     "eslint-plugin-simple-react": "^1.0.8"
   },
   "proxy": "http://localhost:3000",
-  "gitHead": "14b92a182aca254c10e71e363929124088d23223"
+  "gitHead": "571e631a140346416c81755f2755e7d8c5d8542b"
 }
