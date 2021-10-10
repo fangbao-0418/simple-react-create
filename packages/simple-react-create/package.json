@@ -27,6 +27,7 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "autoprefixer": "^9.6.1",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.1",
     "chalk": "^2.4.2",
@@ -72,5 +73,6 @@
     "lib",
     "config"
   ],
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "gitHead": "9b7c8352863366513a71da9215313ef84290622f"
 }

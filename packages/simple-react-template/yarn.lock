@@ -6016,10 +6016,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.4.tgz#366a4684d175b9cab2081e3681fda3747b6c51d7"
   integrity sha512-rqYhcAnZ6d/vTPGghdrw7iumdcbXpsk1b8IG/rz+VWV51DM0p7XCtMoJ3qhPLIbp3tvyt3pKRbaaEMZYpHto8Q==
 
-simple-react-create@^0.0.1-alpha.0:
-  version "0.0.1-alpha.0"
-  resolved "https://registry.npmjs.org/simple-react-create/-/simple-react-create-0.0.1-alpha.0.tgz#b901d16f7e4d68217cada2df2aedf9bc2cf256bd"
-  integrity sha512-b/Z/vWPtVaxTqiXCOSNrpXooZ6LW9xLf7oMtKMTKITPNtb+L7rFaLe+RqyRH2pl9xkF4DX0otxqNyv2wYOakEA==
+simple-react-create@^1.0.0-alpha.0:
+  version "1.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/simple-react-create/-/simple-react-create-1.0.0-alpha.0.tgz#2be678e5021c725c1e84ecec8381f9ee63e231fb"
+  integrity sha512-2Uma3PGdBOO7hITF9c7YDm2YD2duM59XEXtWtBs2/gke83AVyMTSU3DiCK9uT9KlDq+QiCGsJaSg+2A+jIpljA==
   dependencies:
     "@babel/cli" "^7.8.4"
     "@babel/core" "^7.9.6"
