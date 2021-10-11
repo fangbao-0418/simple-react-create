@@ -8,6 +8,7 @@ function init () {
   console.log(appPath, 'appPath')
   let command;
   let args;
+  const remove = 'remove';
   const dependencies = ['simple-react-cra-template']
   command = 'yarnpkg';
   args = ['add', '--cws', '--exact'];
@@ -26,6 +27,9 @@ function init () {
   const templateDir = path.join(templatePath, 'template');
   if (fs.existsSync(templateDir)) {
     fs.copySync(templateDir, appPath);
+    spawn.sync(command, [remove, templateName], {
+      stdio: 'inherit',
+    });
   } else {
     console.error(
       `Could not locate supplied template: ${chalk.green(templateDir)}`
