@@ -4,6 +4,7 @@ const fs = require('fs-extra');
 
 function init () {
   const appPath = process.cwd();
+  const templateName = 'simple-react-cra-templat';
   console.log(appPath, 'appPath')
   let command;
   let args;
