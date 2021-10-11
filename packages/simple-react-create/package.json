@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": {
     "simple-react-create": "./bin/cli.js",
+    "simple-react-create-init": "./bin/init.js",
     "simple-react-create-start": "./bin/start.js",
     "simple-react-create-build": "./bin/build.js"
   },
