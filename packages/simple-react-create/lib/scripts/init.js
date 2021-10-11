@@ -15,13 +15,8 @@ function init() {
   command = 'yarnpkg';
   args = ['add', '--cws', '--exact'];
   [].push.apply(args, dependencies);
-  const child = spawn(command, args, {
+  const child = spawn.sync(command, args, {
     stdio: 'inherit'
-  });
-  child.on('close', code => {
-    if (code !== 0) {
-      return;
-    }
   });
   const templatePath = path.dirname(require.resolve(`${templateName}/package.json`, {
     paths: [appPath]

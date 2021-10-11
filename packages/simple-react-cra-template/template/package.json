@@ -8,13 +8,6 @@
     "dev": "npx simple-react-create-start",
     "build": "npx simple-react-create-build"
   },
-  "files": [
-    "src",
-    ".babelrc",
-    ".eslintrc.json",
-    "tsconfig.json",
-    ".gitignore"
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,6 +16,5 @@
   "devDependencies": {
     "eslint-plugin-simple-react": "^1.0.8"
   },
-  "proxy": "http://localhost:3000",
-  "gitHead": "571e631a140346416c81755f2755e7d8c5d8542b"
+  "proxy": "http://localhost:3000"
 }
