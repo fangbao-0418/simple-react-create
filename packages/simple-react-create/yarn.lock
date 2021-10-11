@@ -6025,6 +6025,11 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.5.tgz#9e3e8cc0c75a99472b44321033a7702e7738252f"
   integrity sha512-KWcOiKeQj6ZyXx7zq4YxSMgHRlod4czeBQZrPb8OKcohcqAXShm7E20kEMle9WBt26hFcAf0qLOcp5zmY7kOqQ==
 
+simple-react-cra-template@1.0.0-alpha.2:
+  version "1.0.0-alpha.2"
+  resolved "https://registry.npmjs.org/simple-react-cra-template/-/simple-react-cra-template-1.0.0-alpha.2.tgz#ecff4ab9dbfb7f8d3e43b9f56f1b2e8c97daf985"
+  integrity sha512-JczpokgnJTvLAePOq16Zuu1myylXOG6UoujcV9WKpIOxjQC0UKudfGASPqwDxw9sX6spfN/qIGycoLybB2y9PQ==
+
 slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"

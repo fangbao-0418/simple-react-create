@@ -54,6 +54,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "rimraf": "^3.0.0",
+    "simple-react-cra-template": "1.0.0-alpha.2",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
     "stylus": "^0.54.7",
