@@ -1,6 +1,2 @@
 node_modules
-yarn-error.log
-lib
 .awcache
-dist
-.vscode

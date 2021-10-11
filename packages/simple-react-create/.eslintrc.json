@@ -6,46 +6,20 @@
   },
   "globals": {
     "APP": true,
-    "__ENV__": true
+    "__ENV__": true,
+    "BUILD_TIME": true
   },
-  "extends": ["standard"],
+  "extends": ["plugin:simple-react/recommended"],
+  "rules": {
+    "brace-style": 0,
+    "react/no-string-refs": 0
+  },
   "parserOptions": {
+    "project": "tsconfig.json",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true
     },
     "sourceType": "module"
-  },
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-    "no-new": "off",
-    "new-cap": "off",
-    "indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "error",
-      "single",
-      { 
-        "allowTemplateLiterals": true
-      }
-    ],
-    "handle-callback-err": 0,
-    "semi": [
-      "error",
-      "never"
-    ],
-    "no-empty": "error",
-    "no-console": "off",
-    "no-unused-vars": "off",
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
-    "import/no-webpack-loader-syntax": 0,
-    "no-proto": 0
   }
 }
