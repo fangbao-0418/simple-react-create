@@ -1,19 +1,20 @@
 const spawn = require('cross-spawn');
 const path = require('path');
 const fs = require('fs-extra');
+const program = require('commander');
+var chalk = require('chalk');
+program.parse(process.argv);
+const templateName = program.args?.[0] || 'simple-react-cra-template'
 
 function init () {
   const appPath = process.cwd();
-  const templateName = 'simple-react-cra-template';
-  console.log(appPath, 'appPath')
-  let command;
+  const command = 'yarnpkg';
   let args;
-  const remove = 'remove';
   const dependencies = ['simple-react-cra-template']
-  command = 'yarnpkg';
-  args = ['add', '--cws', '--exact'];
+  args = ['add', '--cwd', '--exact'];
   [].push.apply(args, dependencies);
-  const child = spawn.sync(command, args, { stdio: 'inherit' });
+  
+  spawn.sync(command, args, { stdio: 'inherit' });
   
   const templatePath = path.dirname(
     require.resolve(`${templateName}/package.json`, { paths: [appPath] })

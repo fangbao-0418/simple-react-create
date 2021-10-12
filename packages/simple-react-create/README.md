@@ -1,12 +1,7 @@
-# USAGE
+# Install
 
 ``` code
-  npm config set registry http://registry-npm-ued.hzxituan.com
-  yarn global add xt-react-cli || npm i xt-react-cli -g
-  
-  dev server
-  xtreact start
-  
-  packaging
-  xtreact build
+  yarn global add simple-react-create || npm i simple-react-create -g
+  simple-react-create init
+  yarn dev
 ```
