@@ -1,4 +1,4 @@
-import "core-js/modules/es.array.concat.js";
+"use strict";
 
 var webpack = require('webpack');
 
@@ -10,7 +10,7 @@ var detect = require('detect-port');
 
 var paths = require('../../config/paths');
 
-var packages = require(paths.package);
+var packages = require(paths["package"]);
 
 program.option('-p, --port <number>', 'specified port of server').option('-e, --entry <string>', 'specified entry of app');
 program.parse(process.argv);

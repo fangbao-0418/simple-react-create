@@ -1,6 +1,6 @@
-var _program$args;
+"use strict";
 
-import "core-js/modules/es.array.join.js";
+var _program$args;
 
 var spawn = require('cross-spawn');
 

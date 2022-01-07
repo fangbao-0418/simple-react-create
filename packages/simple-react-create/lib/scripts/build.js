@@ -1,8 +1,5 @@
 'use strict';
 
-import "core-js/modules/es.object.to-string.js";
-import "core-js/modules/es.regexp.to-string.js";
-
 var path = require('path');
 
 var rm = require('rimraf');
