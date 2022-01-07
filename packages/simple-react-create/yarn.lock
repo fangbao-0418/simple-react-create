@@ -961,11 +961,6 @@
   resolved "https://registry.npmjs.org/@nicolo-ribaudo/chokidar-2/-/chokidar-2-2.1.8-no-fsevents.3.tgz#323d72dd25103d0c4fbdce89dadf574a787b1f9b"
   integrity sha512-s88O1aVtXftvp5bCPB7WnmXc5IwOZZ7YPuwNPt+GtOOXpPvad1LfbmjYv+qII7zP6RU2QGnqve27dnLycEnyEQ==
 
-"@types/eslint-visitor-keys@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
-  integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
-
 "@types/glob@^7.1.1":
   version "7.1.4"
   resolved "https://registry.npmjs.org/@types/glob/-/glob-7.1.4.tgz#ea59e21d2ee5c517914cb4bc8e4153b99e566672"
@@ -974,7 +969,7 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/json-schema@^7.0.3", "@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5":
+"@types/json-schema@^7.0.4", "@types/json-schema@^7.0.5":
   version "7.0.9"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
@@ -1029,47 +1024,6 @@
   version "0.16.2"
   resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
-
-"@typescript-eslint/eslint-plugin-tslint@^2.27.0":
-  version "2.34.0"
-  resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin-tslint/-/eslint-plugin-tslint-2.34.0.tgz#0a2cea8e9a0726ae5a42cecd94095b41b749a8e7"
-  integrity sha512-sCPCbFm1qRTzloeMUlHEKfgQH/2u9bUcW7tX5wjzRw1LWzsr+iNXS8I+2or9ep8mlqqE0Vy6hsMm4vVF82M2jw==
-  dependencies:
-    "@typescript-eslint/experimental-utils" "2.34.0"
-    lodash "^4.17.15"
-
-"@typescript-eslint/experimental-utils@2.34.0":
-  version "2.34.0"
-  resolved "https://registry.npmjs.org/@typescript-eslint/experimental-utils/-/experimental-utils-2.34.0.tgz#d3524b644cdb40eebceca67f8cf3e4cc9c8f980f"
-  integrity sha512-eS6FTkq+wuMJ+sgtuNTtcqavWXqsflWcfBnlYhg/nS4aZ1leewkXGbvBhaapn1q6qf4M71bsR1tez5JTRMuqwA==
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "2.34.0"
-    eslint-scope "^5.0.0"
-    eslint-utils "^2.0.0"
-
-"@typescript-eslint/parser@^2.27.0":
-  version "2.34.0"
-  resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-2.34.0.tgz#50252630ca319685420e9a39ca05fe185a256bc8"
-  integrity sha512-03ilO0ucSD0EPTw2X4PntSIRFtDPWjrVq7C3/Z3VQHRC7+13YB55rcJI3Jt+YgeHbjUdJPcPa7b23rXCBokuyA==
-  dependencies:
-    "@types/eslint-visitor-keys" "^1.0.0"
-    "@typescript-eslint/experimental-utils" "2.34.0"
-    "@typescript-eslint/typescript-estree" "2.34.0"
-    eslint-visitor-keys "^1.1.0"
-
-"@typescript-eslint/typescript-estree@2.34.0":
-  version "2.34.0"
-  resolved "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-2.34.0.tgz#14aeb6353b39ef0732cc7f1b8285294937cf37d5"
-  integrity sha512-OMAr+nJWKdlVM9LOqCqh3pQQPwxHAN7Du8DR6dmwCrAmxtiXQnhHJ6tBNtf+cggqfo51SG/FCwnKhXCIM7hnVg==
-  dependencies:
-    debug "^4.1.1"
-    eslint-visitor-keys "^1.1.0"
-    glob "^7.1.6"
-    is-glob "^4.0.1"
-    lodash "^4.17.15"
-    semver "^7.3.2"
-    tsutils "^3.17.1"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -2845,7 +2799,7 @@ eslint-plugin-promise@^4.2.1:
   resolved "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-4.3.1.tgz#61485df2a359e03149fdafc0a68b0e030ad2ac45"
   integrity sha512-bY2sGqyptzFBDLh/GMbAxfdJC+b0f23ME63FOE4+Jao0oZ3E1LEwFtWJX/1pGMJLiTtrSSern2CRM/g+dfc0eQ==
 
-eslint-plugin-react@^7.14.3, eslint-plugin-react@^7.19.0:
+eslint-plugin-react@^7.14.3:
   version "7.26.1"
   resolved "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.26.1.tgz#41bcfe3e39e6a5ac040971c1af94437c80daa40e"
   integrity sha512-Lug0+NOFXeOE+ORZ5pbsh6mSKjBKXDXItUD2sQoT+5Yl0eoT82DqnXeTMfUare4QVCn9QwXbfzO/dBLjLXwVjQ==
@@ -2864,16 +2818,6 @@ eslint-plugin-react@^7.14.3, eslint-plugin-react@^7.19.0:
     resolve "^2.0.0-next.3"
     semver "^6.3.0"
     string.prototype.matchall "^4.0.5"
-
-eslint-plugin-simple-react@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/eslint-plugin-simple-react/-/eslint-plugin-simple-react-1.0.8.tgz#59f741124048f6cb18b57b821bceda2cb818f04b"
-  integrity sha512-pGOPguHzC33kSoVPMOLcGtW6KXAumC55ThbdpKZByFDoBIoiDnTnybwGik6wGNy7ESr6yRAH6uPfM+N6eAcjFA==
-  dependencies:
-    "@typescript-eslint/eslint-plugin-tslint" "^2.27.0"
-    "@typescript-eslint/parser" "^2.27.0"
-    eslint-plugin-react "^7.19.0"
-    json-schema "^0.2.5"
 
 eslint-plugin-standard@^4.0.1:
   version "4.1.0"
@@ -2900,13 +2844,6 @@ eslint-utils@^1.4.2, eslint-utils@^1.4.3:
   version "1.4.3"
   resolved "https://registry.npmjs.org/eslint-utils/-/eslint-utils-1.4.3.tgz#74fec7c54d0776b6f67e0251040b5806564e981f"
   integrity sha512-fbBN5W2xdY45KulGXmLHZ3c3FHfVYmKg0IrAKGOkT/464PQsx2UeIzfz1RmEci+KLm1bBaAzZAh8+/E+XAeZ8Q==
-  dependencies:
-    eslint-visitor-keys "^1.1.0"
-
-eslint-utils@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/eslint-utils/-/eslint-utils-2.1.0.tgz#d2de5e03424e707dc10c74068ddedae708741b27"
-  integrity sha512-w94dQYoauyvlDc43XnGB8lU3Zt713vNChgt4EWwhXAP2XkBvndfxF0AgIqKOOasjPIPzj9JqgwkwbCYD0/V3Zg==
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
@@ -4221,11 +4158,6 @@ json-schema-traverse@^0.4.1:
   resolved "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz#69f6a87d9513ab8bb8fe63bdb0979c448e684660"
   integrity sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
 
-json-schema@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.npmjs.org/json-schema/-/json-schema-0.2.5.tgz#97997f50972dd0500214e208c407efa4b5d7063b"
-  integrity sha512-gWJOWYFrhQ8j7pVm0EM8Slr+EPVq1Phf6lvzvD/WCeqkrx/f2xBI0xOsRRS9xCn3I4vKtP519dvs3TP09r24wQ==
-
 json-stable-stringify-without-jsonify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
@@ -4398,7 +4330,7 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
-lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.3, lodash@^4.17.5:
+lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.3, lodash@^4.17.5:
   version "4.17.21"
   resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -6093,67 +6025,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.5.tgz#9e3e8cc0c75a99472b44321033a7702e7738252f"
   integrity sha512-KWcOiKeQj6ZyXx7zq4YxSMgHRlod4czeBQZrPb8OKcohcqAXShm7E20kEMle9WBt26hFcAf0qLOcp5zmY7kOqQ==
 
-simple-react-cra-template@1.0.0-alpha.2:
-  version "1.0.0-alpha.2"
-  resolved "https://registry.npmjs.org/simple-react-cra-template/-/simple-react-cra-template-1.0.0-alpha.2.tgz#ecff4ab9dbfb7f8d3e43b9f56f1b2e8c97daf985"
-  integrity sha512-JczpokgnJTvLAePOq16Zuu1myylXOG6UoujcV9WKpIOxjQC0UKudfGASPqwDxw9sX6spfN/qIGycoLybB2y9PQ==
-
-simple-react-create@^1.0.0-alpha.1:
-  version "1.0.0-alpha.7"
-  resolved "https://registry.npmjs.org/simple-react-create/-/simple-react-create-1.0.0-alpha.7.tgz#c17ec3e03d076336ece7a977fc28521577c8d37c"
-  integrity sha512-ac/i6Ype7+RRkROHsfLx1UIVOLI+NH+0yQwD5ANfM1igjMGYjBf35tLf1Zec4O7agP6iPKt+71MTmBNLo2qbPg==
-  dependencies:
-    "@babel/cli" "^7.8.4"
-    "@babel/core" "^7.9.6"
-    "@babel/plugin-transform-runtime" "^7.5.5"
-    "@babel/polyfill" "^7.4.4"
-    "@babel/preset-env" "^7.9.6"
-    "@babel/preset-react" "^7.0.0"
-    "@types/node" "8.10.52"
-    "@types/react" "^16.9.2"
-    "@types/react-dom" "^16.9.0"
-    autoprefixer "^9.6.1"
-    awesome-typescript-loader "^5.2.1"
-    babel-loader "^8.0.6"
-    babel-plugin-import "^1.12.1"
-    chalk "^2.4.2"
-    commander "^3.0.0"
-    core-js "3"
-    css-loader "^3.2.0"
-    detect-port "^1.3.0"
-    eslint "^6.8.0"
-    eslint-config-standard "^14.0.1"
-    eslint-loader "^2.2.1"
-    eslint-plugin-import "^2.18.2"
-    eslint-plugin-node "^9.1.0"
-    eslint-plugin-promise "^4.2.1"
-    eslint-plugin-react "^7.14.3"
-    eslint-plugin-standard "^4.0.1"
-    file-loader "^4.2.0"
-    fork-ts-checker-webpack-plugin "^5.0.7"
-    html-webpack-plugin "^3.2.0"
-    mini-css-extract-plugin "^0.8.0"
-    path "^0.12.7"
-    postcss-csso "^3.0.0"
-    postcss-loader "^3.0.0"
-    react "^16.9.0"
-    react-dom "^16.9.0"
-    rimraf "^3.0.0"
-    simple-react-cra-template "1.0.0-alpha.2"
-    source-map-loader "^0.2.4"
-    style-loader "^1.0.0"
-    stylus "^0.54.7"
-    stylus-loader "^3.0.2"
-    ts-loader "^6.0.4"
-    tslint "^5.19.0"
-    tslint-eslint-rules "^5.4.0"
-    tslint-loader "^3.5.4"
-    tslint-react "^4.0.0"
-    typescript "^3.9.5"
-    url-loader "^2.1.0"
-    webpack "^4.42.1"
-    webpack-dev-server "^3.8.0"
-    yargs-parser "^14.0.0"
+simple-react-cra-template@^1.0.0-alpha.9:
+  version "1.0.0-alpha.9"
+  resolved "https://registry.npmmirror.com/simple-react-cra-template/download/simple-react-cra-template-1.0.0-alpha.9.tgz#fd9a345169b9e8b5d9aada5c60d7074e436878d0"
+  integrity sha1-/Zo0UWm56LXZqtpcYNcHTkNoeNA=
 
 slash@^2.0.0:
   version "2.0.0"
@@ -6759,7 +6634,7 @@ tsutils@^2.29.0:
   dependencies:
     tslib "^1.8.1"
 
-tsutils@^3.0.0, tsutils@^3.17.1, tsutils@^3.9.1:
+tsutils@^3.0.0, tsutils@^3.9.1:
   version "3.21.0"
   resolved "https://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz#b48717d394cea6c1e096983eed58e9d61715b623"
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==

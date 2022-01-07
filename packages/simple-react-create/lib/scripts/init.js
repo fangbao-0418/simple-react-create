@@ -1,30 +1,34 @@
-const spawn = require('cross-spawn');
+var _program$args;
 
-const path = require('path');
+import "core-js/modules/es.array.join.js";
 
-const fs = require('fs-extra');
+var spawn = require('cross-spawn');
 
-const program = require('commander');
+var path = require('path');
+
+var fs = require('fs-extra');
+
+var program = require('commander');
 
 var chalk = require('chalk');
 
 program.parse(process.argv);
-const templateName = program.args?.[0] || 'simple-react-cra-template';
+var templateName = ((_program$args = program.args) === null || _program$args === void 0 ? void 0 : _program$args[0]) || 'simple-react-cra-template';
 
 function init() {
-  const appPath = process.cwd();
-  const command = 'yarnpkg';
-  let args;
-  const dependencies = ['simple-react-cra-template'];
+  var appPath = process.cwd();
+  var command = 'yarnpkg';
+  var args;
+  var dependencies = ['simple-react-cra-template'];
   args = ['add', '--cwd', '--exact'];
   [].push.apply(args, dependencies);
   spawn.sync(command, args, {
     stdio: 'inherit'
   });
-  const templatePath = path.dirname(require.resolve(`${templateName}/package.json`, {
+  var templatePath = path.dirname(require.resolve("".concat(templateName, "/package.json"), {
     paths: [appPath]
   }));
-  const templateDir = path.join(templatePath, 'template');
+  var templateDir = path.join(templatePath, 'template');
 
   if (fs.existsSync(templateDir)) {
     fs.copySync(templateDir, appPath);
@@ -32,7 +36,7 @@ function init() {
       stdio: 'inherit'
     });
   } else {
-    console.error(`Could not locate supplied template: ${chalk.green(templateDir)}`);
+    console.error("Could not locate supplied template: ".concat(chalk.green(templateDir)));
     return;
   }
 }

@@ -1,26 +1,28 @@
-const webpack = require('webpack');
+import "core-js/modules/es.array.concat.js";
 
-const WebpackDevServer = require('webpack-dev-server');
+var webpack = require('webpack');
 
-const program = require('commander');
+var WebpackDevServer = require('webpack-dev-server');
 
-const detect = require('detect-port');
+var program = require('commander');
 
-const paths = require('../../config/paths');
+var detect = require('detect-port');
 
-const packages = require(paths.package);
+var paths = require('../../config/paths');
+
+var packages = require(paths.package);
 
 program.option('-p, --port <number>', 'specified port of server').option('-e, --entry <string>', 'specified entry of app');
 program.parse(process.argv);
-const port = program.port || 3001;
-const entry = program.entry || '';
+var port = program.port || 3001;
+var entry = program.entry || '';
 
 var webpackConfig = require('../../config/webpack/dev.config')({
-  port,
-  entry
+  port: port,
+  entry: entry
 });
 
-const options = {
+var options = {
   inline: true,
   hot: true,
   overlay: true,
@@ -38,14 +40,14 @@ const options = {
   // 启用gzip压缩一切服务:
   compress: true,
   host: '0.0.0.0',
-  port,
+  port: port,
   historyApiFallback: {
     index: '/index.html'
   }
 };
 WebpackDevServer.addDevServerEntrypoints(webpackConfig, options);
-const compiler = webpack(webpackConfig);
-detect(options.port, (err, _port) => {
+var compiler = webpack(webpackConfig);
+detect(options.port, function (err, _port) {
   if (err) {
     console.log(err);
   }
@@ -53,14 +55,14 @@ detect(options.port, (err, _port) => {
   if (port === _port) {
     startServer(port);
   } else {
-    console.log(`port: ${port} was occupied, try port: ${_port}`);
+    console.log("port: ".concat(port, " was occupied, try port: ").concat(_port));
     startServer(_port);
   }
 });
 
 function startServer(port) {
-  const server = new WebpackDevServer(compiler, options);
-  server.listen(port, options.host, () => {
+  var server = new WebpackDevServer(compiler, options);
+  server.listen(port, options.host, function () {
     console.log('Starting server on http://' + options.host + ':' + port);
   });
 }

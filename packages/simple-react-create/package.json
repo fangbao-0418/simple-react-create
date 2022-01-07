@@ -10,7 +10,7 @@
     "simple-react-create-build": "./bin/build.js"
   },
   "scripts": {
-    "lib": "npx babel src/scripts  -d ./lib/scripts --no-babelrc",
+    "lib": "npx babel --config-file ./config/cli/babel.config.json src/scripts  -d ./lib/scripts",
     "dev": "node ./src/scripts/start.js",
     "build": "node ./src/scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"

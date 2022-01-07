@@ -1,6 +1,9 @@
 {
   "name": "simple-react-create",
   "private": true,
+  "scripts": {
+    "publish": "npx lerna publish "
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
   }

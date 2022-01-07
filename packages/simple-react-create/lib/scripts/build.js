@@ -1,5 +1,8 @@
 'use strict';
 
+import "core-js/modules/es.object.to-string.js";
+import "core-js/modules/es.regexp.to-string.js";
+
 var path = require('path');
 
 var rm = require('rimraf');
@@ -8,16 +11,16 @@ var webpack = require('webpack');
 
 var chalk = require('chalk');
 
-const program = require('commander');
+var program = require('commander');
 
 program.option('-e, --entry <entry>', 'specified entry of app').option('-d, --out-dir <out>', 'specified out dir of app');
 program.parse(process.argv);
-const entry = program.entry || '';
-const outdir = program.outDir || '';
+var entry = program.entry || '';
+var outdir = program.outDir || '';
 
 var webpackConfig = require('../../config/webpack/prod.config')({
-  outdir,
-  entry
+  outdir: outdir,
+  entry: entry
 });
 
 var __cwd = process.cwd();
@@ -36,7 +39,7 @@ function callback(err, stats) {
     chunks: false,
     chunkModules: false
   }) + '\n\n');
-  const info = stats.toJson();
+  var info = stats.toJson();
 
   if (stats.hasWarnings()) {
     console.warn(chalk.yellow(info.warnings));
