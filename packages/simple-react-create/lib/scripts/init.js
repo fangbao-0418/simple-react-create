@@ -20,7 +20,7 @@ function init() {
   var command = 'yarnpkg';
   var args;
   var dependencies = ['simple-react-cra-template'];
-  args = ['add', '--cwd', '--exact'];
+  args = ['add', '--cwd', process.cwd(), '--exact'];
   [].push.apply(args, dependencies);
   spawn.sync(command, args, {
     stdio: 'inherit'
