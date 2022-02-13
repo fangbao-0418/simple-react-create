@@ -45,7 +45,7 @@ function getMiniCssExtractLoaderConfig (dev) {
   return {
     loader: MiniCssExtractPlugin.loader,
     options: {
-      hmr: dev
+      // hmr: dev
     }
   }
 }
@@ -112,7 +112,7 @@ function ExtractTextPlugin (dev = true) {
   return new MiniCssExtractPlugin({
     filename: dev ? '[name].css' : 'css/' + '[name].[hash:8].css',
     chunkFilename: dev ? '[id].css' : 'css/' + '[id].[hash:8].css',
-    allChunks: true,
+    // allChunks: true,
     ignoreOrder: true
   })
 }

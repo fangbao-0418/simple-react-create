@@ -45,6 +45,7 @@ var options = {
     index: '/index.html'
   }
 };
+
 WebpackDevServer.addDevServerEntrypoints(webpackConfig, options);
 var compiler = webpack(webpackConfig);
 detect(options.port, function (err, _port) {

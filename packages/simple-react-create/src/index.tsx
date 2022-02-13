@@ -8,7 +8,6 @@ function Main () {
   const [name, setName] = useState('')
   const [age, setAge] = useState(undefined)
   const [record, setRecord] = useState(undefined)
-
   const fetchData = useCallback(() => {
     http('/api/student', 'get').then((res) => {
       setData(res.data)

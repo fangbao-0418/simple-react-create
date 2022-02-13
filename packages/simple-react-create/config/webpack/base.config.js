@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ESLintPlugin = require('eslint-webpack-plugin');
 
 var __cwd = process.cwd()
 var {
@@ -21,6 +22,9 @@ module.exports = (config = {}, dev = true) => {
     }),
     new webpack.HotModuleReplacementPlugin(),
     ExtractTextPlugin(dev),
+    new ESLintPlugin({
+      extensions: ['js', 'jsx', 'ts', 'tsx']
+    }),
     new webpack.ProvidePlugin({
       APP: path.resolve(__cwd, 'src/utils/app')
     })
@@ -37,15 +41,15 @@ module.exports = (config = {}, dev = true) => {
     },
     module: {
       rules: [
-        {
-          enforce: 'pre',
-          test: /\.(js|ts)x?$/,
-          include: path.resolve(__cwd, 'src'),
-          use: [
-            'source-map-loader',
-            'eslint-loader'
-          ]
-        },
+        // {
+        //   enforce: 'pre',
+        //   test: /\.(js|ts)x?$/,
+        //   include: path.resolve(__cwd, 'src'),
+        //   use: [
+        //     'source-map-loader',
+        //     'eslint-loader'
+        //   ]
+        // },
         {
           test: /\.jsx?$/,
           include: path.resolve(__cwd, 'src'),

@@ -11,7 +11,7 @@ function CreateVersionPlugin (options) {
 CreateVersionPlugin.prototype.apply = function (compiler) {
   const options = this.options
   console.log(options)
-  compiler.plugin('emit', function (compilation, callback) {
+  compiler.hooks.emit.tap('CreateVersionPlugin', function (compilation) {
     // 将这个列表作为一个新的文件资源，插入到 webpack 构建中：
     const content = JSON.stringify(options)
     compilation.assets.version = {
@@ -23,7 +23,7 @@ CreateVersionPlugin.prototype.apply = function (compiler) {
       }
     }
 
-    callback()
+    return true
   })
 }
 

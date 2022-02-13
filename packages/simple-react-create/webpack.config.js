@@ -7,10 +7,12 @@ module.exports = (config, env) => {
   // } else {env === 'prod'} {
 
   // }
-  config.plugins.push(
-    new CreateVersion({
-      BUILD_TIME: new Date().getTime()
-    })
-  )
+  if (config.plugins) {
+    config.plugins.push(
+      new CreateVersion({
+        BUILD_TIME: new Date().getTime()
+      })
+    )
+  }
   return config
 }
