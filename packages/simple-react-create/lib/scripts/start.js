@@ -23,13 +23,15 @@ var webpackConfig = require('../../config/webpack/dev.config')({
 });
 
 var options = {
-  inline: true,
-  hot: true,
-  overlay: true,
-  stats: {
-    colors: true,
-    errors: true
+  // inline: true,
+  // hot: true,
+  client: {
+    overlay: true
   },
+  // stats: {
+  //   colors: true,
+  //   errors: true
+  // },
   proxy: packages.proxy ? {
     '/api': {
       target: packages.proxy,
@@ -40,17 +42,16 @@ var options = {
   // 启用gzip压缩一切服务:
   compress: true,
   host: '0.0.0.0',
-  port: port,
+  port: 'auto',
   historyApiFallback: {
     index: '/index.html'
   }
-};
+}; // WebpackDevServer.addDevServerEntrypoints(webpackConfig, options)
 
-WebpackDevServer.addDevServerEntrypoints(webpackConfig, options);
 var compiler = webpack(webpackConfig);
+var server = new WebpackDevServer(options, compiler);
 detect(options.port, function (err, _port) {
-  if (err) {
-    console.log(err);
+  if (err) {// console.log(err)
   }
 
   if (port === _port) {
@@ -62,8 +63,8 @@ detect(options.port, function (err, _port) {
 });
 
 function startServer(port) {
-  var server = new WebpackDevServer(compiler, options);
-  server.listen(port, options.host, function () {
-    console.log('Starting server on http://' + options.host + ':' + port);
-  });
+  // const server = new WebpackDevServer(compiler, options)
+  server.start(); // server.listen(port, options.host, () => {
+  //   console.log('Starting server on http://' + options.host + ':' + port)
+  // })
 }
