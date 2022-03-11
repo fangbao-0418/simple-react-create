@@ -86,6 +86,6 @@ module.exports = (config = {}, dev = true) => {
         '@': path.join(__cwd, 'src')
       }
     },
-    devtool: dev ? 'source-map' : ''
+    devtool: dev ? 'source-map' : false
   }
 }
