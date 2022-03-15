@@ -39,7 +39,8 @@ const options = {
   port: 'auto',
   historyApiFallback: {
     index: '/index.html'
-  }
+  },
+  ...webpackConfig.devServer,
 }
 // WebpackDevServer.addDevServerEntrypoints(webpackConfig, options)
 const compiler = webpack(webpackConfig)
