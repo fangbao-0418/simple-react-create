@@ -77,7 +77,7 @@
     "config"
   ],
   "proxy": "http://localhost:4000",
-  "gitHead": "571e631a140346416c81755f2755e7d8c5d8542b",
+  "gitHead": "f468bfeb4cad2f1d09afaa1ac75d9fb6844c8909",
   "devDependencies": {
     "webpack-cli": "^4.9.2"
   }
