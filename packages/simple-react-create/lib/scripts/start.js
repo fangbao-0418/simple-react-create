@@ -26,7 +26,6 @@ var port = program.port || 3001;
 var entry = program.entry || '';
 
 var webpackConfig = require('../../config/webpack/dev.config')({
-  port: port,
   entry: entry
 });
 
@@ -50,7 +49,7 @@ var options = _objectSpread({
   // 启用gzip压缩一切服务:
   compress: true,
   host: '0.0.0.0',
-  port: 'auto',
+  port: port || '8080',
   historyApiFallback: {
     index: '/index.html'
   }
@@ -63,7 +62,7 @@ detect(options.port, function (err, _port) {
   if (err) {// console.log(err)
   }
 
-  if (port === _port) {
+  if (String(port) === String(_port)) {
     startServer(port);
   } else {
     console.log("port: ".concat(port, " was occupied, try port: ").concat(_port));
@@ -73,7 +72,8 @@ detect(options.port, function (err, _port) {
 
 function startServer(port) {
   // const server = new WebpackDevServer(compiler, options)
-  server.start(); // server.listen(port, options.host, () => {
-  //   console.log('Starting server on http://' + options.host + ':' + port)
-  // })
+  // server.start();
+  server.listen(port, options.host, function () {
+    console.log('Starting server on http://' + options.host + ':' + port);
+  });
 }
