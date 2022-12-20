@@ -13,7 +13,7 @@ var program = require('commander');
 program.option('-e, --entry <entry>', 'specified entry of app').option('-d, --out-dir <out>', 'specified out dir of app');
 program.parse(process.argv);
 var entry = program.entry || '';
-var outdir = program.outDir || '';
+var outdir = program.outDir || 'dist';
 
 var webpackConfig = require('../../config/webpack/prod.config')({
   outdir: outdir,
@@ -39,11 +39,15 @@ function callback(err, stats) {
   var info = stats.toJson();
 
   if (stats.hasWarnings()) {
-    console.warn(chalk.yellow(info.warnings));
+    console.warn(chalk.yellow(info.warnings.map(function (e) {
+      return e.message;
+    })).join('/r/n'));
   }
 
   if (err || stats.hasErrors()) {
-    console.error(chalk.red(info.errors));
+    console.error(chalk.red(info.errors.map(function (e) {
+      return e.message;
+    })).join('/r/n'));
   } else {
     console.log(stats.toString({
       chunks: false,
@@ -55,7 +59,7 @@ function callback(err, stats) {
   }
 }
 
-rm(path.resolve(__cwd, 'deploy/dist/*'), function (err) {
+rm(path.resolve(__cwd, outdir + '/*'), function (err) {
   if (err) throw err;
   var compiler = webpack(webpackConfig);
   compiler.run(callback);

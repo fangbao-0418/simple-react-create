@@ -10,7 +10,7 @@ program
   .option('-d, --out-dir <out>', 'specified out dir of app')
 program.parse(process.argv)
 const entry = program.entry || ''
-const outdir = program.outDir || ''
+const outdir = program.outDir || 'dist'
 var webpackConfig = require('../../config/webpack/prod.config')({
   outdir,
   entry
@@ -32,10 +32,10 @@ function callback (err, stats) {
   }) + '\n\n')
   const info = stats.toJson()
   if (stats.hasWarnings()) {
-    console.warn(chalk.yellow(info.warnings))
+    console.warn(chalk.yellow(info.warnings.map((e) => e.message)).join('/r/n'));
   }
   if (err || stats.hasErrors()) {
-    console.error(chalk.red(info.errors))
+    console.error(chalk.red(info.errors.map((e) => e.message)).join('/r/n'));
   } else {
     console.log(stats.toString({
       chunks: false, // 使构建过程更静默无输出
@@ -44,7 +44,7 @@ function callback (err, stats) {
     console.log(chalk.green('[ok] Builded with successful'));
   }
 }
-rm(path.resolve(__cwd, 'deploy/dist/*'), function (err) {
+rm(path.resolve(__cwd, outdir + '/*'), function (err) {
   if (err) throw err
   var compiler = webpack(webpackConfig);
   compiler.run(callback);
