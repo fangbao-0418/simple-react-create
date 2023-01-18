@@ -10,5 +10,6 @@ module.exports = {
   appPath: resolveApp('.'),
   package: resolveApp('package.json'),
   appDist: resolveApp('dist'),
+  appConfig: resolveApp('config/index.js'),
   webpack: resolveApp('webpack.config.js')
 };

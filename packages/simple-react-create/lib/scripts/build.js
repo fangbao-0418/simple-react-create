@@ -41,13 +41,13 @@ function callback(err, stats) {
   if (stats.hasWarnings()) {
     console.warn(chalk.yellow(info.warnings.map(function (e) {
       return e.message;
-    })).join('/r/n'));
+    }).join('\r\n')));
   }
 
   if (err || stats.hasErrors()) {
     console.error(chalk.red(info.errors.map(function (e) {
       return e.message;
-    })).join('/r/n'));
+    }).join('\r\n')));
   } else {
     console.log(stats.toString({
       chunks: false,

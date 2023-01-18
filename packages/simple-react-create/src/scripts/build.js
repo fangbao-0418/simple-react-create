@@ -32,10 +32,19 @@ function callback (err, stats) {
   }) + '\n\n')
   const info = stats.toJson()
   if (stats.hasWarnings()) {
-    console.warn(chalk.yellow(info.warnings.map((e) => e.message)).join('/r/n'));
+    console.warn(
+      chalk.yellow(
+        info.warnings.map((e) => e.message)
+        .join('\r\n')
+      )
+    );
   }
   if (err || stats.hasErrors()) {
-    console.error(chalk.red(info.errors.map((e) => e.message)).join('/r/n'));
+    console.error(
+      chalk.red(
+        info.errors.map((e) => e.message).join('\r\n')
+      )
+    );
   } else {
     console.log(stats.toString({
       chunks: false, // 使构建过程更静默无输出

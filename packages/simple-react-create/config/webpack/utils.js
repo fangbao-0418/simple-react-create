@@ -1,6 +1,15 @@
 var path = require('path')
+var fs = require('fs');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var __cwd = process.cwd()
+var paths = require('../paths')
+var pkg = require(paths.package)
+
+function getConfig () {
+  return fs.existsSync(paths.appConfig) ? require(paths.appConfig) : {}
+}
+
+const appConfig = getConfig()
 
 function getCssLoaderConfig (dev, modules = false) {
   return {
@@ -50,8 +59,18 @@ function getMiniCssExtractLoaderConfig (dev) {
   }
 }
 
+function getLessLoaderConfig (dev, modules) {
+  return {
+    loader: 'less-loader',
+    options: {
+      sourceMap: dev,
+      lessOptions: appConfig.lessOptions
+    }
+  }
+}
+
 function getStyleLoaderConfig (dev = true) {
-  return [{
+  const config =  [{
     test: /\.css$/,
     exclude: /\.m(odule)?\.css$/,
     use: [
@@ -82,11 +101,24 @@ function getStyleLoaderConfig (dev = true) {
     include: path.resolve(__cwd, 'src'),
     use: [
       getMiniCssExtractLoaderConfig(dev),
-      getCssLoaderConfig(dev, true),
+      getCssLoaderConfig(dev,true),
       getPostCssLoaderConfig(dev, true),
       getStylusLoaderConfig(dev, true)
     ]
   }]
+  if (pkg.devDependencies && pkg.devDependencies['less-loader']) {
+    config.push({
+      test: /\.less$/i,
+      // include: path.resolve(__cwd, 'src'),
+      use: [
+        getMiniCssExtractLoaderConfig(dev),
+        getCssLoaderConfig(dev),
+        getPostCssLoaderConfig(dev),
+        getLessLoaderConfig(dev)
+      ]
+    })
+  }
+  return config
 }
 function getImageLoaderConfig (dev = true) {
   return {
