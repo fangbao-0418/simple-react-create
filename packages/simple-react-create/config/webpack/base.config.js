@@ -8,11 +8,16 @@ var {
   getFileLoaderConfig,
   getStyleLoaderConfig,
   getImageLoaderConfig,
-  ExtractTextPlugin
+  ExtractTextPlugin,
+  getCompileConfig,
+  getConfig
 } = require('./utils')
 module.exports = (config = {}, dev = true) => {
   const entry = config.entry
   const outdir = config.outdir || 'dist'
+  const appConfig = getConfig()
+  const compileConfig = getCompileConfig()
+  
   var plugins = [
     new HtmlWebpackPlugin({
       template: path.resolve(__cwd, 'src/index.html'),
@@ -36,8 +41,10 @@ module.exports = (config = {}, dev = true) => {
     },
     output: {
       path: path.resolve(__cwd, outdir),
-      filename: dev ? undefined : 'js/' + '[name]-[hash].bundle.js',
-      publicPath: '/'
+      filename: dev ? undefined : 'js/' + '[name]-[contenthash].bundle.js',
+      chunkFilename: dev ? undefined : 'js/' + '[id]-[contenthash].chunk.js',
+      publicPath: appConfig.publicPath || '/',
+      uniqueName: appConfig.uniqueName
     },
     module: {
       rules: [
@@ -52,8 +59,8 @@ module.exports = (config = {}, dev = true) => {
         // },
         {
           test: /\.jsx?$/,
-          include: path.resolve(__cwd, 'src'),
-          exclude: /node_modules/,
+          include: compileConfig.include || path.resolve(__cwd, 'src'),
+          exclude: compileConfig.exclude || /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -82,7 +89,7 @@ module.exports = (config = {}, dev = true) => {
         '.styl',
         '.css'
       ],
-      alias: {
+      alias: appConfig.alias || {
         '@': path.join(__cwd, 'src')
       }
     },

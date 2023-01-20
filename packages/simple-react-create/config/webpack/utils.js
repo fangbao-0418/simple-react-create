@@ -1,4 +1,4 @@
-var path = require('path')
+const path = require('path')
 var fs = require('fs');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var __cwd = process.cwd()
@@ -6,7 +6,24 @@ var paths = require('../paths')
 var pkg = require(paths.package)
 
 function getConfig () {
-  return fs.existsSync(paths.appConfig) ? require(paths.appConfig) : {}
+  if (fs.existsSync(paths.appConfig)) {
+    const appConfig = require(paths.appConfig)
+    if (appConfig instanceof Function) {
+      return appConfig()
+    }
+    return appConfig
+  }
+  return {}
+}
+
+function getCompileConfig () {
+  const appConfig = getConfig()
+  const compileInclude = appConfig.compile && appConfig.compile.include
+  const compileExclude = appConfig.compile && appConfig.compile.exclude
+  return {
+    include: compileInclude,
+    exclude: compileExclude
+  }
 }
 
 const appConfig = getConfig()
@@ -142,13 +159,18 @@ function getFileLoaderConfig (dev = true) {
 }
 function ExtractTextPlugin (dev = true) {
   return new MiniCssExtractPlugin({
-    filename: dev ? '[name].css' : 'css/' + '[name].[hash:8].css',
-    chunkFilename: dev ? '[id].css' : 'css/' + '[id].[hash:8].css',
+    filename: dev ? '[name].css' : 'css/' + '[name].[contenthash:8].css',
+    chunkFilename: dev ? '[id].css' : 'css/' + '[id].[contenthash:8].css',
     // allChunks: true,
     ignoreOrder: true
   })
 }
 module.exports = {
+  getCompileConfig,
+  getConfig,
+  getMiniCssExtractLoaderConfig,
+  getCssLoaderConfig,
+  getPostCssLoaderConfig,
   getStyleLoaderConfig,
   getImageLoaderConfig,
   getFileLoaderConfig,

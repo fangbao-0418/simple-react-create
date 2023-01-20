@@ -9,17 +9,22 @@ var path = require('path')
 var webpack = require('webpack')
 var paths = require('../paths')
 const customWebpackConfig = fs.existsSync(paths.webpack) ? require(paths.webpack) : null
+var {
+  getCompileConfig
+} = require('./utils')
+
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 module.exports = (config) => {
   var baseConfig = require('./base.config')(config, true)
+  const compileConfig = getCompileConfig()
   var __cwd = process.cwd()
   // const tsconfigFileContent = require(path.resolve(__dirname, '../tsconfig.json'))
   // tsconfigFileContent.compilerOptions.baseUrl = __cwd
   baseConfig.module.rules.push(
     {
       test: /\.tsx?$/,
-      include: path.resolve(__cwd, 'src'),
-      exclude: /node_modules/,
+      include: compileConfig.include || path.resolve(__cwd, 'src'),
+      exclude: compileConfig.exclude || /node_modules/,
       use: [
         {
           loader: 'babel-loader',

@@ -5,20 +5,24 @@
  * @FilePath: /xt-crm/Users/fb/Documents/xituan/xt-cli/config/webpack/prod.config.js
  */
 const fs = require('fs')
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin');
-var paths = require('../paths')
+const paths = require('../paths')
+const {
+  getCompileConfig
+} = require('./utils')
 const customWebpackConfig = fs.existsSync(paths.webpack) ? require(paths.webpack) : null
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 module.exports = (config) => {
   var baseConfig = require('./base.config')(config, false)
   var __cwd = process.cwd()
+  const compileConfig = getCompileConfig()
   baseConfig.module.rules.push(
     {
       test: /\.tsx?$/,
-      include: path.resolve(__cwd, 'src'),
-      exclude: /node_modules/,
+      include: compileConfig.include || path.resolve(__cwd, 'src'),
+      exclude: compileConfig.exclude || /node_modules/,
       use: [
         {
           loader: 'babel-loader',
