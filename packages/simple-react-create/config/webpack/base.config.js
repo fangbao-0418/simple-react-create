@@ -15,12 +15,12 @@ var {
 module.exports = (config = {}, dev = true) => {
   const entry = config.entry
   const outdir = config.outdir || 'dist'
-  const appConfig = getConfig()
-  const compileConfig = getCompileConfig()
+  const appConfig = getConfig(dev)
+  const compileConfig = getCompileConfig(dev)
   
   var plugins = [
     new HtmlWebpackPlugin({
-      template: path.resolve(__cwd, 'src/index.html'),
+      template: appConfig.template || path.resolve(__cwd, 'src/index.html'),
       // 要把<script>标签插入到页面哪个标签里(body|true|head|false)
       inject: true,
       // favicon: path.resolve(__cwd, 'src/favicon.ico')
@@ -32,8 +32,13 @@ module.exports = (config = {}, dev = true) => {
     }),
     new webpack.ProvidePlugin({
       APP: path.resolve(__cwd, 'src/utils/app')
-    })
+    }),
+    new webpack.DefinePlugin(
+      appConfig.define
+    ),
+    ...appConfig.plugins
   ]
+  
   return {
     mode: dev ? 'development' : 'production',
     entry: {
@@ -70,7 +75,8 @@ module.exports = (config = {}, dev = true) => {
         },
         ...getStyleLoaderConfig(dev),
         getImageLoaderConfig(dev),
-        getFileLoaderConfig(dev)
+        getFileLoaderConfig(dev),
+        ...appConfig.rules
       ]
     },
     plugins: plugins,

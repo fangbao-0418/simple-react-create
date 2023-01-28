@@ -17,7 +17,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 module.exports = (config) => {
   var baseConfig = require('./base.config')(config, false)
   var __cwd = process.cwd()
-  const compileConfig = getCompileConfig()
+  const compileConfig = getCompileConfig(false)
   baseConfig.module.rules.push(
     {
       test: /\.tsx?$/,

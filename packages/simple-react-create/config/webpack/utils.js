@@ -1,23 +1,12 @@
-const path = require('path')
+var path = require('path')
 var fs = require('fs');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var __cwd = process.cwd()
 var paths = require('../paths')
 var pkg = require(paths.package)
 
-function getConfig () {
-  if (fs.existsSync(paths.appConfig)) {
-    const appConfig = require(paths.appConfig)
-    if (appConfig instanceof Function) {
-      return appConfig()
-    }
-    return appConfig
-  }
-  return {}
-}
-
-function getCompileConfig () {
-  const appConfig = getConfig()
+function getCompileConfig (dev) {
+  const appConfig = getConfig(dev)
   const compileInclude = appConfig.compile && appConfig.compile.include
   const compileExclude = appConfig.compile && appConfig.compile.exclude
   return {
@@ -26,7 +15,6 @@ function getCompileConfig () {
   }
 }
 
-const appConfig = getConfig()
 
 function getCssLoaderConfig (dev, modules = false) {
   return {
@@ -165,6 +153,16 @@ function ExtractTextPlugin (dev = true) {
     ignoreOrder: true
   })
 }
+const getConfig = (dev) => {
+  if (fs.existsSync(paths.appConfig)) {
+    const appConfig = require(paths.appConfig)
+    if (appConfig instanceof Function) {
+      return appConfig(dev)
+    }
+    return appConfig
+  }
+  return {}
+}
 module.exports = {
   getCompileConfig,
   getConfig,
@@ -176,3 +174,4 @@ module.exports = {
   getFileLoaderConfig,
   ExtractTextPlugin
 }
+const appConfig = getConfig()

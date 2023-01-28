@@ -16,7 +16,7 @@ var {
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 module.exports = (config) => {
   var baseConfig = require('./base.config')(config, true)
-  const compileConfig = getCompileConfig()
+  const compileConfig = getCompileConfig(true)
   var __cwd = process.cwd()
   // const tsconfigFileContent = require(path.resolve(__dirname, '../tsconfig.json'))
   // tsconfigFileContent.compilerOptions.baseUrl = __cwd
