@@ -36,7 +36,7 @@ function getPostCssLoaderConfig (dev) {
     loader: 'postcss-loader',
     options: {
       sourceMap: dev,
-      config: {
+      postcssOptions: {
         path: path.resolve(__dirname, '../postcss.config.js'),
         ctx: {
           env: dev ? 'development' : 'production'

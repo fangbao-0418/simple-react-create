@@ -34,9 +34,9 @@ module.exports = (config = {}, dev = true) => {
       APP: path.resolve(__cwd, 'src/utils/app')
     }),
     new webpack.DefinePlugin(
-      appConfig.define
+      appConfig.define || {}
     ),
-    ...appConfig.plugins
+    ...(appConfig.plugins || [])
   ]
   
   return {
@@ -76,7 +76,7 @@ module.exports = (config = {}, dev = true) => {
         ...getStyleLoaderConfig(dev),
         getImageLoaderConfig(dev),
         getFileLoaderConfig(dev),
-        ...appConfig.rules
+        ...(appConfig.rules || [])
       ]
     },
     plugins: plugins,
