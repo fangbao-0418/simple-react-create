@@ -37,7 +37,14 @@ function getPostCssLoaderConfig (dev) {
     options: {
       sourceMap: dev,
       postcssOptions: {
-        path: path.resolve(__dirname, '../postcss.config.js'),
+        // config: path.resolve(__dirname, '../postcss.config.js'),
+        plugins: {
+          autoprefixer: {
+            overrideBrowserslist: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
+            flexbox: 'no-2009'
+          },
+          'postcss-csso': !dev ? {} : false
+        },
         ctx: {
           env: dev ? 'development' : 'production'
         }
