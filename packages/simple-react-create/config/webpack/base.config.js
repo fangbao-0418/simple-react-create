@@ -82,8 +82,8 @@ module.exports = (config = {}, dev = true) => {
     plugins: plugins,
     resolve: {
       modules: [
-        path.resolve(__cwd, 'node_modules'),
-        path.resolve(__cwd, 'src')
+        path.resolve(__cwd, 'src'),
+        'node_modules'
       ],
       extensions: [
         '.tsx',
@@ -93,7 +93,8 @@ module.exports = (config = {}, dev = true) => {
         '.min.js',
         '.json',
         '.styl',
-        '.css'
+        '.css',
+        '.less'
       ],
       alias: appConfig.alias || {
         '@': path.join(__cwd, 'src')
