@@ -83,6 +83,7 @@ module.exports = (config = {}, dev = true) => {
     resolve: {
       modules: [
         path.resolve(__cwd, 'src'),
+        path.resolve(__cwd, 'node_modules'),
         'node_modules'
       ],
       extensions: [
