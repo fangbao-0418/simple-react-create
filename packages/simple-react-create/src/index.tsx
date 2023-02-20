@@ -46,6 +46,12 @@ function Main () {
     <div
       style={{ color: 'red' }}
     >
+      <div style={{ background: 'red', padding: 20 }}>
+        <img
+          src={require('@/assets/archive.svg').default} alt=''
+          style={{ color: 'red' }}
+        />
+      </div>
       <input value={name} onChange={(e) => setName(e.target.value)} />
       <input
         value={age}
