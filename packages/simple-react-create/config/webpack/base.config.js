@@ -51,6 +51,7 @@ module.exports = (config = {}, dev = true) => {
       publicPath: appConfig.publicPath || '/',
       uniqueName: appConfig.uniqueName
     },
+    target: ['web', 'node'],
     module: {
       rules: [
         // {
