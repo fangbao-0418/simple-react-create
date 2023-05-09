@@ -23,7 +23,7 @@ module.exports = (config = {}, dev = true) => {
       template: appConfig.template || path.resolve(__cwd, 'src/index.html'),
       // 要把<script>标签插入到页面哪个标签里(body|true|head|false)
       inject: true,
-      favicon: path.resolve(__cwd, 'src/favicon.ico')
+      favicon: appConfig.favicon === false ? undefined : path.resolve(__cwd, 'src/favicon.ico')
     }),
     new webpack.HotModuleReplacementPlugin(),
     ExtractTextPlugin(dev),
@@ -51,7 +51,7 @@ module.exports = (config = {}, dev = true) => {
       publicPath: appConfig.publicPath || '/',
       uniqueName: appConfig.uniqueName
     },
-    target: ['web', 'node'],
+    target: ['web', 'es5'],
     module: {
       rules: [
         // {
