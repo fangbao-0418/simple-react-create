@@ -121,12 +121,24 @@ function getStyleLoaderConfig (dev = true) {
   if (pkg.devDependencies && pkg.devDependencies['less-loader']) {
     config.push({
       test: /\.less$/i,
+      exclude: /\.m(odule)?\.less$/,
       // include: path.resolve(__cwd, 'src'),
       use: [
         getMiniCssExtractLoaderConfig(dev),
         getCssLoaderConfig(dev),
         getPostCssLoaderConfig(dev),
         getLessLoaderConfig(dev)
+      ]
+    })
+
+    config.push({
+      test: /\.m(odule)?\.less$/i,
+      // include: path.resolve(__cwd, 'src'),
+      use: [
+        getMiniCssExtractLoaderConfig(dev),
+        getCssLoaderConfig(dev, true),
+        getPostCssLoaderConfig(dev, true),
+        getLessLoaderConfig(dev, true)
       ]
     })
   }
