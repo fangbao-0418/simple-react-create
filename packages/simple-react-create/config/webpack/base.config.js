@@ -102,6 +102,7 @@ module.exports = (config = {}, dev = true) => {
         '@': path.join(__cwd, 'src')
       }
     },
+    devServer: dev ? appConfig.devServer : undefined,
     devtool: dev ? 'source-map' : false
   }
 }
