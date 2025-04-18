@@ -26,19 +26,20 @@ module.exports = (config) => {
       include: compileConfig.include || path.resolve(__cwd, 'src'),
       exclude: compileConfig.exclude || /node_modules/,
       use: [
+        // {
+        //   loader: 'babel-loader',
+        //   options: {
+        //     cacheDirectory: true,
+        //     configFile: path.resolve(__cwd, './.babelrc')
+        //   }
+        // },
         {
-          loader: 'babel-loader',
+          loader: "swc-loader",
           options: {
-            cacheDirectory: true,
-            configFile: path.resolve(__cwd, './.babelrc')
-          }
-        },
-        {
-          loader: 'ts-loader',
-          options: {
-            context: __cwd,
-            transpileOnly: true,
-            configFile: path.resolve(__cwd, './tsconfig.json')
+            parseMap: true,
+            // context: __cwd,
+            // transpileOnly: true,
+            // configFile: path.resolve(__cwd, './tsconfig.json')
           }
         }
       ]
